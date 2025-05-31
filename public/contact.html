@@ -68,44 +68,27 @@
 </head>
 <body>
 
-    <div class="menu-container">
-        <h1>rudracaters</h1>
-        <h2>VEGETARIAN FOOD MENU</h2>
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="d30e759f-bebf-41ab-8c9d-e89f29ac222a">
 
-        <h3>Contact Us for Catering</h3>
-        <form class="contact-form" id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="phone" placeholder="Your Phone" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="phone" placeholder="Your Phone" required>
+    
+    <!-- Optional: Add date input -->
+    <input type="date" name="date" required>
 
-        <p>📞 6262702468</p>
-        <p>🌐 www.rudracaters.com</p>
-    </div>
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Submit</button>
+</form>
 
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", async function (e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-
-            const response = await fetch("/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
-
-            if (response.ok) {
-                alert("✅ Message Sent Successfully!");
-                this.reset();
-            } else {
-                alert("❌ Error Sending Message.");
-            }
-        });
-    </script>
+<!-- <script>
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        
+    });
+</script> -->
 
 </body>
 </html>

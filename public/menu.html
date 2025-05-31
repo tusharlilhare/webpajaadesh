@@ -1,106 +1,268 @@
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vegetarian Food Menu</title>
+    <title>Dark Theme Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; background-color: #222; color: white; text-align: center; }
-        .menu-container { max-width: 600px; margin: 20px auto; padding: 20px; background: #333; border-radius: 10px; box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.5); }
-        h1 { font-size: 28px; font-family: 'Cursive', sans-serif; color: yellow; }
-        h2 { font-size: 22px; background: yellow; color: black; padding: 5px; display: inline-block; border-radius: 5px; }
-        h3 { font-size: 20px; color: yellow; margin-top: 20px; border-bottom: 2px solid yellow; display: inline-block; padding-bottom: 5px; }
-        ul { list-style: none; padding: 0; }
-        ul li { font-size: 18px; padding: 8px; display: flex; justify-content: space-between; border-bottom: 1px solid #555; cursor: pointer; }
-        ul li span { font-weight: bold; color: yellow; }
-        ul li.selected { background-color: yellow; color: black; font-weight: bold; }
-        .contact { margin-top: 20px; font-size: 16px; }
-        .contact p { margin: 5px 0; background: yellow; color: black; display: inline-block; padding: 5px 10px; border-radius: 5px; }
-        form { margin-top: 20px; }
-        input, button { padding: 10px; margin: 5px; width: 80%; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #e2e8f0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .col-md-3, .col-md-6 {
+            padding: 0 15px;
+        }
+
+        .col-md-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .main {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+                        0 0 0 1px rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border-radius: 2px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .box {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 2px solid rgba(71, 85, 105, 0.5);
+            border-radius: 12px;
+            color: #e2e8f0;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .box:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .box::placeholder {
+            color: #94a3b8;
+        }
+
+        #submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        #submit:hover {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        p {
+            color: #94a3b8;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #818cf8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animation for form elements */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main > * {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        h2 { animation-delay: 0.1s; }
+        .box:nth-child(1) { animation-delay: 0.2s; }
+        .box:nth-child(2) { animation-delay: 0.3s; }
+        #submit { animation-delay: 0.4s; }
+        p { animation-delay: 0.5s; }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .col-md-3 {
+                display: none;
+            }
+            
+            .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .main {
+                padding: 30px;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main {
+                padding: 20px;
+            }
+            
+            .box {
+                padding: 12px 15px;
+            }
+            
+            #submit {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .main {
+            animation: float 6s ease-in-out infinite;
+        }
     </style>
 </head>
 <body>
 
-    <div class="menu-container">
-        <h1>Rudra Caters</h1>
-        <h2>VEGETARIAN FOOD MENU</h2>
 
-        <div class="menu-section">
-            <h3>Main Course</h3>
-            <ul id="menu-list">
-                <li data-name="Fried Rice" data-price="15">Fried Rice <span>$15</span></li>
-                <li data-name="Vegetable Biryani" data-price="14">Vegetable Biryani <span>$14</span></li>
-                <li data-name="Masala Chai" data-price="3">Masala Chai <span>$3</span></li>
-                <li data-name="Pav Bhaji" data-price="12">Pav Bhaji <span>$12</span></li>
-                <li data-name="Poha" data-price="8">Poha <span>$8</span></li>
-                <li data-name="Samosa" data-price="5">Samosa <span>$5</span></li>
-                <li data-name="Sev Puri" data-price="10">Sev Puri <span>$10</span></li>
-                <li data-name="Vada Pav" data-price="7">Vada Pav <span>$7</span></li>
-                <li data-name="Veg Sandwich" data-price="9">Veg Sandwich <span>$9</span></li>
-                <li data-name="Dhokla" data-price="8">Dhokla <span>$8</span></li>
-                <li data-name="Pani Puri" data-price="10">Pani Puri <span>$10</span></li>
-                <li data-name="Veg Thali" data-price="20">Veg Thali <span>$20</span></li>
-                <li data-name="Pulao" data-price="10">Pulao <span>$10</span></li>
-                <li data-name="Curd Rice" data-price="9">Curd Rice <span>$9</span></li>
-                <li data-name="Cucumber Raita" data-price="5">Cucumber Raita <span>$5</span></li>
-                <li data-name="Paneer Butter Masala" data-price="16">Paneer Butter Masala <span>$16</span></li>
-            </ul>
-        </div>
 
-        <form id="order-form">
-            <input type="text" id="client-name" placeholder="Enter your name" required>
-            <input type="email" id="client-email" placeholder="Enter your email" required>
-            <input type="tel" id="client-phone" placeholder="Enter your phone number" required>
-            <button type="submit">Book Order</button>
-        </form>
 
-        <div class="contact">
-            <p>📞 6262702468</p>
-            <p>🌐 www.rudracaters.com</p>
-        </div>
-    </div>
+<form action="https://api.web3forms.com/submit" method="POST" id="order-form">
+    <input type="hidden" name="access_key" value="d30e759f-bebf-41ab-8c9d-e89f29ac222a" />
+    
+    <!-- Optional fields for subject and redirect -->
+    <input type="hidden" name="subject" value="New Login Request from Website">
+    <input type="hidden" name="from_name" value="Login Form">
+
+    <input type="text" class="box" id="email" name="email" placeholder="Email" required />
+    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
+    <input type="submit" value="Login" id="submit" />
+    
+    <br><br>
+    <p>Don't have an account? <a href="register.html">Register here</a></p>
+</form>
+
+
+
+
+
 
     <script>
-        document.querySelectorAll("#menu-list li").forEach(item => {
-            item.addEventListener("click", () => {
-                item.classList.toggle("selected");
+        // Add focus effect to input fields
+        document.querySelectorAll('.box').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
             });
         });
 
-        document.getElementById("order-form").addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            const selectedItems = Array.from(document.querySelectorAll("#menu-list li.selected"))
-                .map(item => ({ name: item.dataset.name, price: item.dataset.price }));
-
-            const orderData = {
-                name: document.getElementById("client-name").value,
-                email: document.getElementById("client-email").value,
-                phone: document.getElementById("client-phone").value,
-                items: selectedItems
-            };
-
-            const response = await fetch("/book-order", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(orderData)
-            });
-
-            const result = await response.json();
-            alert(result.message);
+        // Form submission effect
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submit');
+            submitBtn.disabled = true;
+            submitBtn.value = 'Logging in...';
+            submitBtn.style.opacity = '0.8';
+            
+            // Simulate login process
+            setTimeout(() => {
+                submitBtn.value = 'Login';
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+            }, 2000);
         });
     </script>
-
 </body>
 </html>

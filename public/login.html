@@ -1,42 +1,10 @@
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 main">
-                <h2>Login Form</h2>
-                <form action="/login" method="POST">
-                    <input type="text" class="box" id="email" name="email" placeholder="Email" required />
-                    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
-                    <input type="submit" value="Login" id="submit" />
-                    <br><br>
-                    <p>Don't have an account? <a href="register.html">Register here</a></p>
-                </form>
-            </div>
-        </div>
-    </div>
-</body>
-</html> -->
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dark Theme Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         * {
             margin: 0;
@@ -44,7 +12,6 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, sans-serif;
         }
-
         body {
             background: linear-gradient(135deg, #0f172a, #1e293b);
             min-height: 100vh;
@@ -54,43 +21,36 @@
             padding: 20px;
             color: #e2e8f0;
         }
-
         .container {
             width: 100%;
             max-width: 800px;
         }
-
         .row {
             display: flex;
             flex-wrap: wrap;
             margin: 0 -15px;
         }
-
         .col-md-3, .col-md-6 {
             padding: 0 15px;
         }
-
         .col-md-3 {
             flex: 0 0 25%;
             max-width: 25%;
         }
-
         .col-md-6 {
             flex: 0 0 50%;
             max-width: 50%;
         }
-
         .main {
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
-                        0 0 0 1px rgba(99, 102, 241, 0.1);
+                0 0 0 1px rgba(99, 102, 241, 0.1);
             border: 1px solid rgba(99, 102, 241, 0.2);
             text-align: center;
         }
-
         h2 {
             font-size: 2.5rem;
             background: linear-gradient(to right, #8b5cf6, #ec4899);
@@ -102,7 +62,6 @@
             position: relative;
             padding-bottom: 15px;
         }
-
         h2::after {
             content: '';
             position: absolute;
@@ -114,13 +73,11 @@
             background: linear-gradient(to right, #6a11cb, #2575fc);
             border-radius: 2px;
         }
-
         form {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-
         .box {
             width: 100%;
             padding: 15px 20px;
@@ -131,18 +88,15 @@
             font-size: 16px;
             transition: all 0.3s ease;
         }
-
         .box:focus {
             outline: none;
             border-color: #6366f1;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
             background: rgba(30, 41, 59, 0.8);
         }
-
         .box::placeholder {
             color: #94a3b8;
         }
-
         #submit {
             width: 100%;
             padding: 15px;
@@ -159,86 +113,89 @@
             text-transform: uppercase;
             box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
         }
-
         #submit:hover {
             background: linear-gradient(135deg, #4f46e5, #7c3aed);
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
         }
-
         p {
             color: #94a3b8;
             margin-top: 20px;
         }
-
         a {
             color: #818cf8;
             text-decoration: none;
             font-weight: 600;
         }
-
         a:hover {
             text-decoration: underline;
         }
-
-        /* Animation for form elements */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
         .main > * {
             animation: fadeIn 0.6s ease-out forwards;
         }
-
-        h2 { animation-delay: 0.1s; }
-        .box:nth-child(1) { animation-delay: 0.2s; }
-        .box:nth-child(2) { animation-delay: 0.3s; }
-        #submit { animation-delay: 0.4s; }
-        p { animation-delay: 0.5s; }
-
-        /* Responsive design */
+        h2 {
+            animation-delay: 0.1s;
+        }
+        .box:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .box:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        #submit {
+            animation-delay: 0.4s;
+        }
+        p {
+            animation-delay: 0.5s;
+        }
         @media (max-width: 768px) {
             .col-md-3 {
                 display: none;
             }
-            
             .col-md-6 {
                 flex: 0 0 100%;
                 max-width: 100%;
             }
-            
             .main {
                 padding: 30px;
             }
-            
             h2 {
                 font-size: 2rem;
             }
         }
-
         @media (max-width: 480px) {
             .main {
                 padding: 20px;
             }
-            
             .box {
                 padding: 12px 15px;
             }
-            
             #submit {
                 padding: 12px;
                 font-size: 16px;
             }
         }
-
-        /* Floating animation */
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
-
         .main {
             animation: float 6s ease-in-out infinite;
         }
@@ -250,43 +207,85 @@
             <div class="col-md-3"></div>
             <div class="col-md-6 main">
                 <h2>Login Form</h2>
-                <form action="/login" method="POST">
+                <form id="loginForm">
                     <input type="text" class="box" id="email" name="email" placeholder="Email" required />
                     <input type="password" class="box" id="password" name="password" placeholder="Password" required />
                     <input type="submit" value="Login" id="submit" />
-                    <br><br>
-                    <p>Don't have an account? <a href="register.html">Register here</a></p>
+                    <br /><br />
+                    <p>Don't have an account? <a href="./register.html">Register here</a></p>
                 </form>
             </div>
         </div>
     </div>
 
-    <script>
-        // Add focus effect to input fields
-        document.querySelectorAll('.box').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-            });
-        });
+</body>
+</html> -->
 
-        // Form submission effect
-        document.querySelector('form').addEventListener('submit', function(e) {
-            const submitBtn = document.getElementById('submit');
-            submitBtn.disabled = true;
-            submitBtn.value = 'Logging in...';
-            submitBtn.style.opacity = '0.8';
-            
-            // Simulate login process
-            setTimeout(() => {
-                submitBtn.value = 'Login';
-                submitBtn.disabled = false;
-                submitBtn.style.opacity = '1';
-            }, 2000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Email" required /><br />
+    <input type="password" id="password" placeholder="Password" required /><br />
+    <button type="submit">Login</button>
+  </form>
+
+  <p>Don't have an account? <a href="register.html">Register here</a></p>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "XXXXXX",
+      appId: "APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          alert("Login successful!");
+          // Redirect to dashboard or home page
+          window.location.href = "home.html";
+        })
+        .catch((error) => {
+          alert("Login failed: " + error.message);
         });
-    </script>
+    });
+  </script>
 </body>
 </html>
