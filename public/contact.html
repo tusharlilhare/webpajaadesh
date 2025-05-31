@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetarian Food Menu - Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #333;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.5);
+        }
+
+        h1, h2, h3 {
+            color: yellow;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 18px;
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #555;
+        }
+
+        .contact-form {
+            background: #444;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background: yellow;
+            color: black;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <h1>rudracaters</h1>
+        <h2>VEGETARIAN FOOD MENU</h2>
+
+        <h3>Contact Us for Catering</h3>
+        <form class="contact-form" id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Your Phone" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <p>📞 6262702468</p>
+        <p>🌐 www.rudracaters.com</p>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch("/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                alert("✅ Message Sent Successfully!");
+                this.reset();
+            } else {
+                alert("❌ Error Sending Message.");
+            }
+        });
+    </script>
+
+</body>
+</html>

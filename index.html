@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rudra Catering Service</title>
+  <link rel="icon" href="./assets/logo.jpg" type="image/jpg" />
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <a href="/">
+        <img src="./assets/logo.jpg" alt="Logo" />
+      </a>
+    </div>
+<h1>Rudra Catering Service</h1>
+    <button id="menu-toggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="menu.html"><i class="fas fa-utensils"></i> Menu</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="login.html"><i class="fas fa-user"></i> Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="carousel">
+    <div class="slides" id="slide-container">
+      <img src="./assets/benar1.png" alt="Slide 1" />
+      <img src="./assets/benar2.png" alt="Slide 2" />
+      <img src="./assets/benar3.png" alt="Slide 3" />
+      <img src="./assets/benar5.png" alt="Slide 4" />
+    </div>
+    <div class="dot-container">
+      <span class="dot active" onclick="changeSlide(0)"></span>
+      <span class="dot" onclick="changeSlide(1)"></span>
+      <span class="dot" onclick="changeSlide(2)"></span>
+      <span class="dot" onclick="changeSlide(3)"></span>
+    </div>
+  </div>
+
+  <section id="home">
+    <h1>Welcome to Rudra Catering Service</h1>
+    <p>Delicious food for every occasion!</p>
+  </section>
+
+  <a id="book" href="/book">BOOK NOW</a>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>Rudra Catering Service</h3>
+      <p>Delicious food for every occasion. Quality, taste, and service you can trust.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: lilharetushar37@gmail.com</p>
+      <p>Phone: +91 12345 67890</p>
+      <p>Address: 123, Food Street, indor</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100082879814213" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      
+        <a href="https://www.instagram.com/tushar.lodhi18/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Rudra Catering Service. All rights reserved.
+  </div>
+</footer>
+
+  <script>
+    // Toggle menu for mobile
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Carousel Logic
+    let current = 0;
+    const slides = document.getElementById("slide-container");
+    const dots = document.querySelectorAll(".dot");
+
+    function changeSlide(index) {
+      current = index;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot) => dot.classList.remove("active"));
+      dots[index].classList.add("active");
+    }
+
+    // Auto slide every 5 seconds
+    setInterval(() => {
+      current = (current + 1) % dots.length;
+      changeSlide(current);
+    }, 5000);
+  </script>
+</body>
+</html>
